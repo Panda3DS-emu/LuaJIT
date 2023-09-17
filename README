@@ -1,3 +1,6 @@
+# Disclaimer
+This is a fork of https://github.com/grumpycoders/LuaJIT with CMake support ported from https://github.com/WohlSoft/LuaJIT. Please support the original projects.
+
 README for LuaJIT 2.1.0-beta3
 -----------------------------
 
