@@ -586,6 +586,11 @@ target_compile_options(libluajit PRIVATE ${LJ_COMPILE_OPTIONS})
 if (LUAJIT_BUILD_TOOL)
   # Build the luajit binary
   add_executable(luajit luajit.c)
+
+  if(WIN32 OR CMAKE_HOST_SYSTEM_NAME MATCHES "Windows")
+    set_target_properties(luajit PROPERTIES OUTPUT_NAME "luajit_bin")
+  endif()
+  
   target_link_libraries(luajit libluajit)
   if (APPLE AND LJ_64 AND NOT LUAJIT_ENABLE_GC64)
     target_link_libraries(luajit "-pagezero_size 10000" "-image_base 100000000")
